@@ -2,6 +2,8 @@
 # Copyright (c) 2026 victor256sd
 # All rights reserved.
 #
+# 06.05.2026 - Added image map for logo.
+#
 # 05.06.2026 - Added logo.
 #
 # 04.28.2026 - Updated landing page language based on NASDTEC direction.
@@ -80,6 +82,13 @@ if st.session_state.get('authentication_status'):
     st.set_page_config(page_title="Ethics Chatbot", page_icon=":butterfly:", layout="wide")
     # st.header(":butterfly: Integrity AI")
     st.image("image.png", width=700)
+    st.html(
+        <img src="image.png", alt="edmse", usemap="#imagemap">
+        <map name="imagemap">
+        <area shape="rect", coords="900,30,1480,200", alt="nasdtec", href="https://www.nasdtec.net">
+        <area shape="circle", coords="1210,365,140", alt="ncaee", href="https://www.educatorethics.org">
+        </map>
+    )
     # st.markdown("###### Advancing dialogue on ethics for educators.")
     # st.markdown("###### Your starting point for educator ethics")
     st.markdown("NASDTEC serves as a national advocate for the advancement of ethical practice within the education profession. To that end, the Model Code of Ethics for Educators (MCEE) was developed under NASDTEC’s leadership by a diverse and representative task force of educational practitioners and launched in 2015. Subsequently, NASDTEC established the National Council for the Advancement of Educator Ethics (NCAEE), which is charged with promoting and fostering awareness and understanding of the MCEE.")
