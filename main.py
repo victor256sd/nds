@@ -84,10 +84,10 @@ if st.session_state.get('authentication_status'):
     st.image("image.png", width=700)
     st.markdown(
         f"""
-        <img src="https://raw.githubusercontent.com/victor256sd/thecode/main/image.png" alt="edmse" width=700 usemap="#imagemap">
+        <img src="https://raw.githubusercontent.com/victor256sd/thecode/main/image.png" alt="edmse" width=700 usemap="imagemap">
         <map name="imagemap">
-            <area shape="rect" coords="900,30,1480,200" alt="nasdtec" href="https://www.nasdtec.net">
-            <area shape="circle" coords="1210,365,140" alt="ncaee" href="https://www.educatorethics.org">
+            <area shape="rect" coords="420,14,691,94" alt="nasdtec" href="https://www.nasdtec.net">
+            <area shape="circle" coords="196,171,66" alt="ncaee" href="https://www.educatorethics.org">
         </map>        
         """,
         unsafe_allow_html=True
