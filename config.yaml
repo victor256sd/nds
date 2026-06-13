@@ -6,7 +6,7 @@ credentials:
       password: $2b$12$.ejUPQtRJR9cLgZd.e7fUeBpUFf5gXT/9RwXsZNCKhvWuT96wsywK
 cookie:
   expiry_days: 30
-  key: thecode_signature_key # Must be string
-  name: thecode_cookie_name
+  key: usbe_signature_key # Must be string
+  name: usbe_cookie_name
 preauthorized:
   emails:
