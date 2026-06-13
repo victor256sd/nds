@@ -100,8 +100,8 @@ if st.session_state.get('authentication_status'):
         st.stop()
     
     # Create new form to search aitam library vector store.    
-    with st.form(key="qa_form", clear_on_submit=False, height=300):
-        query = st.text_area("**What would you like to discuss?**", height="stretch")
+    with st.form(key="qa_form", clear_on_submit=False): #, height=300):
+        query = st.text_area("**What would you like to discuss?**") #, height="stretch")
         submit = st.form_submit_button("Send")
         
     # If submit button is clicked, query the aitam library.            
