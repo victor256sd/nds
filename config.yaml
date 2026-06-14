@@ -8,6 +8,10 @@ credentials:
       email: stephanie@aberration.com
       name: Stephanie
       password: $2b$12$4mstfEdUwlCWJ8r4Zlkd4OfvtMd8Z0MxcOhFrhkLGI4TNQEKjp4sW
+    tania:
+      email: tania@aberration.com
+      name: Tania
+      password: $2b$12$0dSKuvytJFaha2dCcrdm6eutW3apTEuwo9sayqVPGim.pTUSaz4K2
 cookie:
   expiry_days: 30
   key: nds_signature_key # Must be string
