@@ -2,7 +2,7 @@
 # Copyright (c) 2026 victor256sd
 # All rights reserved.
 #
-# 06.13.2026 - Initiate USBE AI Assistant for website information.
+# 06.13.2026 - Initiate New Dawn Specialists AI Assistant for investigative information.
 #
 #################################################################################
 import streamlit as st
@@ -80,12 +80,12 @@ if st.session_state.get('authentication_status'):
     INSTRUCTION = f.decrypt(INSTRUCTION_ENCRYPTED).decode()
     
     # Set page layout and title.
-    st.set_page_config(page_title="USBE Chatbot", page_icon=":deer:", layout="wide")
-    st.header(":deer: USBE AI")
+    st.set_page_config(page_title="New Dawn Chatbot", page_icon=":sunrise:", layout="wide")
+    st.header(":sunrise: New Dawn AI")
     # st.image("image.png", width=700)
     # st.markdown("###### Advancing dialogue on ethics for educators.")
     # st.markdown("###### Your starting point for educator ethics")
-    st.markdown("An AI-powered chatbot that helps users quickly find and understand Utah State Board of Education policies, standards, and resources using official USBE content.")
+    st.markdown("An AI-powered chatbot that helps users quickly find and understand insights from Chicago Public Schools Office of Inspector General reports and related resources on child exploitation.")
     
     # Field for OpenAI API key.
     openai_api_key = os.environ.get("OPENAI_API_KEY", None)
@@ -108,7 +108,7 @@ if st.session_state.get('authentication_status'):
     if submit:
         # If form is submitted without a query, stop.
         if not query:
-            st.error("Enter a question to search USBE information!")
+            st.error("Enter a question to search Chicago OIG information!")
             st.stop()            
         # Setup output columns to display results.
         # answer_col, sources_col = st.columns(2)
@@ -148,10 +148,10 @@ if st.session_state.get('authentication_status'):
             retrieved_files = set([response2.filename for response2 in annotations])
             file_list_str = ", ".join(retrieved_files)
             st.markdown(f"**File(s):** {file_list_str}")
-            st.markdown("For additional information and resources, please visit [www.schools.utah.gov/board/](http://www.schools.utah.gov/board/).")
+            # st.markdown("For additional information and resources, please visit [www.schools.utah.gov/board/](http://www.schools.utah.gov/board/).")
         except (AttributeError, IndexError):
             st.markdown("**File(s): n/a**")
-            st.markdown("For additional information and resources, please visit [www.schools.utah.gov/board/](http://www.schools.utah.gov/board/).")
+            # st.markdown("For additional information and resources, please visit [www.schools.utah.gov/board/](http://www.schools.utah.gov/board/).")
 
         # st.session_state.ai_response = cleaned_response
         # Write files used to generate the answer.
