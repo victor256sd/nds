@@ -4,13 +4,13 @@ credentials:
       email: victor@aberration.com
       name: Victor
       password: $2b$12$.ejUPQtRJR9cLgZd.e7fUeBpUFf5gXT/9RwXsZNCKhvWuT96wsywK
-    megan:
-      email: megan@aberration.com
-      name: Megan
-      password: $2b$12$Jg7Jr3kZ.rcXOyPM2SkI3OBdlIEfEWA2mL9xk72PT0XGvNYgaBKZa
+    stephanie:
+      email: stephanie@aberration.com
+      name: Stephanie
+      password: $2b$12$4mstfEdUwlCWJ8r4Zlkd4OfvtMd8Z0MxcOhFrhkLGI4TNQEKjp4sW
 cookie:
   expiry_days: 30
-  key: usbe_signature_key # Must be string
-  name: usbe_cookie_name
+  key: nds_signature_key # Must be string
+  name: nds_cookie_name
 preauthorized:
   emails:
