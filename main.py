@@ -86,7 +86,8 @@ if st.session_state.get('authentication_status'):
     # st.markdown("###### Advancing dialogue on ethics for educators.")
     # st.markdown("###### Your starting point for educator ethics")
     st.markdown("An AI-powered chatbot that helps users quickly find and understand insights from Chicago Public Schools Office of Inspector General reports and related resources on child exploitation.")
-    
+
+    st.markdown("*Disclaimer: The information provided by this chatbot is generated from selected CPS OIG reports and related resources and is intended solely for informational purposes. It does not constitute legal advice, investigative conclusions, or official CPS or OIG positions. Information may be incomplete, redacted, or subject to change. Users are responsible for verifying information through official sources and should consult qualified professionals or authorities for guidance. If you believe a child is at risk or a crime has occurred, contact law enforcement or appropriate reporting channels immediately.*")
     # Field for OpenAI API key.
     openai_api_key = os.environ.get("OPENAI_API_KEY", None)
 
