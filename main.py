@@ -153,13 +153,10 @@ def print_results(results: List[Dict]):
     st.sidebar.markdown("## Top Education Misconduct / School Litigation News")
 
     for index, article in enumerate(results, start=1):
-
         description = article.get("description", "")
-
         st.sidebar.markdown(
             f"""
             **{index}. {article.get('title')}**
-            
             **Source:** {article.get('source', {}).get('name', 'Unknown')}  
             **Published:** {article.get('publishedAt')}  
             **URL:** {article.get('url')}  
