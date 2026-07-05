@@ -2,6 +2,7 @@
 # Copyright (c) 2026 victor256sd
 # All rights reserved.
 #
+# 07.05.2026 - Added sidebar with RAG information and links for more info.
 # 06.14.2026 - Initiate New Dawn Specialists AI Assistant for investigative information.
 #
 #################################################################################
@@ -80,14 +81,18 @@ if st.session_state.get('authentication_status'):
     INSTRUCTION = f.decrypt(INSTRUCTION_ENCRYPTED).decode()
     
     # Set page layout and title.
-    st.set_page_config(page_title="New Dawn Chatbot", page_icon=":sunrise:", layout="wide")
+    st.set_page_config(page_title="New Dawn Chatbot", page_icon=":sunrise:", layout="wide", initial_sidebar_state="collapsed")
     st.header(":sunrise: New Dawn AI")
+    st.sidebar.markdown("The New Dawn Chatbot RAG contains the following documents:\n\n[Chicago Public Schools OIG Annual Report 2025](https://cpsoig.org/reports.html)\n[Chicago Public Schools OIG Annual Report 2024](https://cpsoig.org/reports.html)\n[Chicago Public Schools OIG Annual Report 2023](https://cpsoig.org/reports.html)\n[Chicago Public Schools OIG Annual Report 2022](https://cpsoig.org/reports.html)\n[Chicago Public Schools OIG Annual Report 2021](https://cpsoig.org/reports.html)[Chicago Public Schools OIG Annual Report 2020](https://cpsoig.org/reports.html)\n[US DOJ Child Forensic Interviewing Best Practices, 2015](https://ojjdp.ojp.gov/sites/g/files/xyckuh176/files/pubs/248749.pdf)\n[US DOJ Guides to Investigating Child Abuse, 1997](https://www.ojp.gov/library/publications/portable-guides-investigating-child-abuse)\n[HSI Child Sexual Exploitation Investigations Handbook, 2020](https://www.ice.gov/node/65395)\n[ICAC Generative AI Guide for Schools](https://icactaskforce.org/OCEPI)\n[ICAC Helping Youth Navigate Online Sextortion and Exploitation](https://icactaskforce.org/OCEPI)\n[ICAC Ten Best Practices for Prevention](https://icactaskforce.org/OCEPI)")
     # st.image("image.png", width=700)
     # st.markdown("###### Advancing dialogue on ethics for educators.")
     # st.markdown("###### Your starting point for educator ethics")
     st.markdown("An AI-powered chatbot that helps users quickly find and understand insights from Chicago Public Schools Office of Inspector General reports and related resources on child exploitation.")
 
     st.markdown("*Disclaimer: The information provided by this chatbot is generated from selected CPS OIG reports and related resources and is intended solely for informational purposes. It does not constitute legal advice, investigative conclusions, or official CPS or OIG positions. Information may be incomplete, redacted, or subject to change. Users are responsible for verifying information through official sources and should consult qualified professionals or authorities for guidance. If you believe a child is at risk or a crime has occurred, contact law enforcement or appropriate reporting channels immediately.*")
+
+
+    
     # Field for OpenAI API key.
     openai_api_key = os.environ.get("OPENAI_API_KEY", None)
 
