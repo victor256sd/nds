@@ -1,4 +1,5 @@
 cryptography
+newsapi
 openai
 openpyxl
 pathlib
