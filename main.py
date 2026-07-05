@@ -150,25 +150,23 @@ def build_news_feed(final_count: int, threshold: int) -> List:
     return articles[:final_count]
 
 def print_results(results: List[Dict]):
+    st.sidebar.markdown("New Dawn Newsfeed:")
 
-    print("\nTOP EDUCATION MISCONDUCT / SCHOOL LITIGATION NEWS")
-    print("=" * 80)
+    st.sidebar.markdown("Top Education Misconduct / School Litigation News")
 
     for index, article in enumerate(results, start=1):
 
-        print(f"\n[{index}] {article.get('title')}")
-        print(
+        st.sidebar.markdown(f"\n[{index}] {article.get('title')}")
+        st.sidebar.markdown(
             f"Source: "
             f"{article.get('source', {}).get('name', 'Unknown')}"
         )
-        print(f"Published: {article.get('publishedAt')}")
-        print(f"URL: {article.get('url')}")
+        st.sidebar.markdown(f"Published: {article.get('publishedAt')}")
+        st.sidebar.markdown(f"URL: {article.get('url')}")
 
         description = article.get("description")
         if description:
-            print(f"Summary: {description}")
-
-        print("-" * 80)
+            st.sidebar.markdown(f"Summary: {description}")
 
 # Definitive CSS selectors for Streamlit 1.45.1+
 # st.markdown("""
@@ -305,6 +303,7 @@ if st.session_state.get('authentication_status'):
 
     try:
         results = build_news_feed(final_count=10, threshold=10)
+        print_results(results)
     except Exception as e:
         exit(0)
         
