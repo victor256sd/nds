@@ -154,17 +154,31 @@ def print_results(results: List[Dict]):
 
     for index, article in enumerate(results, start=1):
 
-        st.sidebar.markdown(f"\n*{index}*. {article.get('title')}")
-        st.sidebar.markdown(
-            f"*Source*: "
-            f"{article.get('source', {}).get('name', 'Unknown')}"
-        )
-        st.sidebar.markdown(f"*Published*: {article.get('publishedAt')}")
-        st.sidebar.markdown(f"*URL*: {article.get('url')}")
+        description = article.get("description", "")
 
-        description = article.get("description")
-        if description:
-            st.sidebar.markdown(f"*Summary*: {description}\n")
+        st.sidebar.markdown(
+            f"""
+            **{index}. {article.get('title')}**
+            
+            **Source:** {article.get('source', {}).get('name', 'Unknown')}  
+            **Published:** {article.get('publishedAt')}  
+            **URL:** {article.get('url')}  
+            **Summary:** {description}
+            """)
+
+    # for index, article in enumerate(results, start=1):
+
+    #     st.sidebar.markdown(f"\n**{index}**. {article.get('title')}")
+    #     st.sidebar.markdown(
+    #         f"**Source**: "
+    #         f"{article.get('source', {}).get('name', 'Unknown')}"
+    #     )
+    #     st.sidebar.markdown(f"**Published**: {article.get('publishedAt')}")
+    #     st.sidebar.markdown(f"**URL**: {article.get('url')}")
+
+    #     description = article.get("description")
+    #     if description:
+    #         st.sidebar.markdown(f"**Summary**: {description}\n")
 
 # Definitive CSS selectors for Streamlit 1.45.1+
 # st.markdown("""
