@@ -331,7 +331,9 @@ if st.session_state.get('authentication_status'):
     :black_small_square: [ICAC Helping Youth Navigate Online Sextortion and Exploitation](https://icactaskforce.org/OCEPI)\n
     :black_small_square: [ICAC Ten Best Practices for Prevention](https://icactaskforce.org/OCEPI)    
     """)
-                        
+
+    #--------------------------------------------------
+
     # st.image("image.png", width=700)
     # st.markdown("###### Advancing dialogue on ethics for educators.")
     # st.markdown("###### Your starting point for educator ethics")
