@@ -136,9 +136,7 @@ def build_news_feed(final_count: int = FINAL_RESULT_COUNT, threshold: int = MIN_
         )
 
         fallback_articles = execute_fallback_searches()
-
         articles.extend(fallback_articles)
-
         articles = deduplicate_articles(articles)
 
         print(
@@ -306,15 +304,10 @@ if st.session_state.get('authentication_status'):
     ]
 
     try:
-        results = build_news_feed(
-            final_count=10,
-            threshold=10
-        )
-        print_results(results)
-
+        results = build_news_feed(final_count=10, threshold=10)
     except Exception as e:
-        print(f"ERROR: {e}")
-    
+        exit(0)
+        
     st.sidebar.markdown("""
     The New Dawn Chatbot RAG contains the following documents:\n\n
     :black_small_square: [Chicago Public Schools OIG Annual Report 2025](https://cpsoig.org/reports.html)\n
