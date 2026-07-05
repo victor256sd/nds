@@ -111,7 +111,7 @@ def execute_fallback_searches() -> List:
 
     return articles
 
-def build_news_feed(final_count: int = FINAL_RESULT_COUNT, threshold: int = MIN_ARTICLE_THRESHOLD) -> List:
+def build_news_feed(final_count: int, threshold: int) -> List:
     # Strategy:
     # 1. Run one comprehensive query.
     # 2. Deduplicate.
