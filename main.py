@@ -25,10 +25,8 @@ from typing import List, Dict
 def disable_button():
     st.session_state.disabled = True        
 
-def search_everything(query: str, page_size: int = 100) -> List"""
-    Execute a NewsAPI Everything search.
-    """
-
+def search_everything(query: str, page_size: int = 100) -> List:
+    # Execute a NewsAPI Everything search.
     params = {
         "q": query,
         "language": "en",
@@ -44,7 +42,6 @@ def search_everything(query: str, page_size: int = 100) -> List"""
     )
 
     response.raise_for_status()
-
     data = response.json()
 
     if data.get("status") != "ok":
@@ -52,9 +49,8 @@ def search_everything(query: str, page_size: int = 100) -> List"""
 
     return data.get("articles", [])
 
-def deduplicate_articles(articles: List[Dict]) -> List"""
-    Deduplicate by URL.
-    """
+def deduplicate_articles(articles: List[Dict]) -> List:
+    # Deduplicate by URL.
     seen_urls = set()
     unique_articles = []
 
@@ -73,9 +69,7 @@ def deduplicate_articles(articles: List[Dict]) -> List"""
     return unique_articles
 
 def parse_date(article: Dict) -> datetime:
-    """
-    Parse NewsAPI publishedAt field.
-    """
+    # Parse NewsAPI publishedAt field.
     published = article.get("publishedAt")
 
     if not published:
@@ -88,9 +82,8 @@ def parse_date(article: Dict) -> datetime:
     except Exception:
         return datetime.min.replace(tzinfo=None)
 
-def execute_primary_search() -> List"""
-    Run the broad query.
-    """
+def execute_primary_search() -> List:
+    # Run the broad query.
     print("Running primary search...")
 
     articles = search_everything(PRIMARY_QUERY)
@@ -99,9 +92,8 @@ def execute_primary_search() -> List"""
 
     return articles
 
-def execute_fallback_searches() -> List"""
-    Run targeted searches if primary search is too sparse.
-    """
+def execute_fallback_searches() -> List:
+    # Run targeted searches if primary search is too sparse.
     print("Running fallback searches...")
 
     articles = []
@@ -119,22 +111,16 @@ def execute_fallback_searches() -> List"""
 
     return articles
 
-def build_news_feed(
-    final_count: int = FINAL_RESULT_COUNT,
-    threshold: int = MIN_ARTICLE_THRESHOLD
-    ) -> List"""
-    Strategy:
-    1. Run one comprehensive query.
-    2. Deduplicate.
-    3. If fewer than threshold articles,
-       execute targeted fallback searches.
-    4. Deduplicate again.
-    5. Sort newest first.
-    6. Return top N.
-    """
-
+def build_news_feed(final_count: int = FINAL_RESULT_COUNT, threshold: int = MIN_ARTICLE_THRESHOLD) -> List:
+    # Strategy:
+    # 1. Run one comprehensive query.
+    # 2. Deduplicate.
+    # 3. If fewer than threshold articles,
+    #    execute targeted fallback searches.
+    # 4. Deduplicate again.
+    # 5. Sort newest first.
+    # 6. Return top N.
     articles = execute_primary_search()
-
     articles = deduplicate_articles(articles)
 
     print(
