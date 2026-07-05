@@ -150,23 +150,21 @@ def build_news_feed(final_count: int, threshold: int) -> List:
     return articles[:final_count]
 
 def print_results(results: List[Dict]):
-    st.sidebar.markdown("New Dawn Newsfeed:")
-
-    st.sidebar.markdown("Top Education Misconduct / School Litigation News")
+    st.sidebar.markdown("## Top Education Misconduct / School Litigation News")
 
     for index, article in enumerate(results, start=1):
 
-        st.sidebar.markdown(f"\n[{index}] {article.get('title')}")
+        st.sidebar.markdown(f"\n*{index}*. {article.get('title')}")
         st.sidebar.markdown(
-            f"Source: "
+            f"*Source*: "
             f"{article.get('source', {}).get('name', 'Unknown')}"
         )
-        st.sidebar.markdown(f"Published: {article.get('publishedAt')}")
-        st.sidebar.markdown(f"URL: {article.get('url')}")
+        st.sidebar.markdown(f"*Published*: {article.get('publishedAt')}")
+        st.sidebar.markdown(f"*URL*: {article.get('url')}")
 
         description = article.get("description")
         if description:
-            st.sidebar.markdown(f"Summary: {description}")
+            st.sidebar.markdown(f"*Summary*: {description}\n")
 
 # Definitive CSS selectors for Streamlit 1.45.1+
 # st.markdown("""
@@ -308,7 +306,7 @@ if st.session_state.get('authentication_status'):
         exit(0)
         
     st.sidebar.markdown("""
-    The New Dawn Chatbot RAG contains the following documents:\n\n
+    ## The New Dawn Chatbot RAG contains the following documents:\n\n
     :black_small_square: [Chicago Public Schools OIG Annual Report 2025](https://cpsoig.org/reports.html)\n
     :black_small_square: [Chicago Public Schools OIG Annual Report 2024](https://cpsoig.org/reports.html)\n
     :black_small_square: [Chicago Public Schools OIG Annual Report 2023](https://cpsoig.org/reports.html)\n
