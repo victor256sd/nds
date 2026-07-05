@@ -3,7 +3,7 @@ newsapi
 openai
 openpyxl
 pathlib
-requests
+requests>=2.31.0
 streamlit
 streamlit-authenticator
 tiktoken
