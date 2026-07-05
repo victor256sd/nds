@@ -53,6 +53,20 @@ hide_embedded_frame = """
 #     </style>
 # """
 st.markdown(hide_embedded_frame, unsafe_allow_html=True)
+st.markdown(
+"""
+<style>
+[data-testid="stSidebar"] [aria-expanded="true"] > div:first-child {
+width: 400px; /* Set your desired width */
+}
+[data-testid="stSidebar"] [aria-expanded="false"] > div:first-child {
+width: 400px; /* Set your desired width */
+margin-left: -400px; /* Adjust margin for collapsed state */
+}
+</style>
+""",
+unsafe_allow_html=True,
+)
 
 # Load config file with user credentials.
 with open("config.yaml") as file:
