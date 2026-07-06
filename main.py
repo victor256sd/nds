@@ -20,6 +20,8 @@ import re
 import requests
 from datetime import datetime
 from typing import List, Dict
+from datetime import datetime
+from zoneinfo import ZoneInfo
 
 # Disable the button called via on_click attribute.
 def disable_button():
@@ -158,10 +160,34 @@ def print_results(results: List[Dict]):
             f"""
             **{index}. {article.get('title')}**
             **Source:** {article.get('source', {}).get('name', 'Unknown')}  
-            **Published:** {article.get('publishedAt')}  
+            **Published:** {format_published_date(article.get('publishedAt'))}<br> 
             **URL:** {article.get('url')}  
             **Summary:** {description}
             """)
+
+# Make user-friendly date/time from News API date/time.
+def format_published_date(date_str):
+
+    if not date_str:
+        return "Unknown"
+
+    try:
+        # Convert UTC string from NewsAPI
+        utc_dt = datetime.fromisoformat(
+            date_str.replace("Z", "+00:00")
+        )
+
+        # Convert to local timezone
+        local_dt = utc_dt.astimezone(
+            ZoneInfo("America/Los_Angeles")
+        )
+
+        return local_dt.strftime(
+            "%B %d, %Y, %I:%M %p %Z"
+        )
+
+    except Exception:
+        return date_str
 
     # for index, article in enumerate(results, start=1):
 
