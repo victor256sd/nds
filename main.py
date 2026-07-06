@@ -150,7 +150,7 @@ def build_news_feed(final_count: int, threshold: int) -> List:
     return articles[:final_count]
 
 def print_results(results: List[Dict]):
-    st.sidebar.markdown("## Top Education Misconduct / School Litigation News")
+    st.sidebar.markdown("## School-Associated Litigation News")
 
     for index, article in enumerate(results, start=1):
         description = article.get("description", "")
@@ -237,7 +237,6 @@ result_auth = authenticator.login("main")
     
 # If login successful, continue to aitam page.
 if st.session_state.get('authentication_status'):
-    st.info(":information_source: Access educator misconduct and litigation news in the sidebar.")
     authenticator.logout('Logout', 'main')
     st.write(f'Welcome *{st.session_state.get('name')}* !')
 
@@ -334,6 +333,7 @@ if st.session_state.get('authentication_status'):
         st.markdown(":black_medium_small_square: [ICAC Exploitation, Sextortion, and Violence Prevention Guides](https://www.ice.gov/node/65395)")
         st.markdown(":black_medium_small_square: [US DOJ Child Forensic Interviewing Best Practices](https://ojjdp.ojp.gov/sites/g/files/xyckuh176/files/pubs/248749.pdf)")
         st.markdown(":black_medium_small_square: [US DOJ Guides to Investigating Child Abuse](https://www.ojp.gov/library/publications/portable-guides-investigating-child-abuse)")
+        st.info(":information_source: Access school litigation news in the sidebar.")
     
     # st.image("image.png", width=700)
     # st.markdown("###### Advancing dialogue on ethics for educators.")
