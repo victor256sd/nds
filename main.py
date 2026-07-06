@@ -319,7 +319,7 @@ if st.session_state.get('authentication_status'):
 
     #--------------------------------------------------
 
-    left_column, right_column = st.columns([1.0, 1.0])
+    left_column, middle_column, right_column = st.columns([1.4, 0.2, 1.4])
 
     # --- LEFT COLUMN: Tool description and disclaimer ---
     with left_column: 
