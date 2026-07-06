@@ -163,7 +163,7 @@ def print_results(results: List[Dict]):
             **Published:** {format_published_date(article.get('publishedAt'))}<br> 
             **URL:** {article.get('url')}  
             **Summary:** {description}
-            """)
+            """, unsafe_allow_html=True)
 
 # Make user-friendly date/time from News API date/time.
 def format_published_date(date_str):
