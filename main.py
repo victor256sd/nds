@@ -330,7 +330,7 @@ if st.session_state.get('authentication_status'):
         st.markdown("Additional Resources:")
         st.markdown(":black_medium_small_square: [Chicago Public Schools OIG Annual Reports](https://cpsoig.org/reports.html)")
         st.markdown(":black_medium_small_square: [HSI Child Sexual Exploitation Investigations Handbook](https://www.ice.gov/node/65395)")
-        st.markdown(":black_medium_small_square: [ICAC Exploitation, Sextortion, and Violence Prevention Guides](https://www.ice.gov/node/65395)")
+        st.markdown(":black_medium_small_square: [ICAC Exploitation and Violence Prevention Guides](https://www.ice.gov/node/65395)")
         st.markdown(":black_medium_small_square: [US DOJ Child Forensic Interviewing Best Practices](https://ojjdp.ojp.gov/sites/g/files/xyckuh176/files/pubs/248749.pdf)")
         st.markdown(":black_medium_small_square: [US DOJ Guides to Investigating Child Abuse](https://www.ojp.gov/library/publications/portable-guides-investigating-child-abuse)")
         st.info(":information_source: Access school litigation news in the sidebar.")
