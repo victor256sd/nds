@@ -237,6 +237,7 @@ result_auth = authenticator.login("main")
     
 # If login successful, continue to aitam page.
 if st.session_state.get('authentication_status'):
+    st.info(":information_source: Access educator misconduct and litigation news in the sidebar.")
     authenticator.logout('Logout', 'main')
     st.write(f'Welcome *{st.session_state.get('name')}* !')
 
