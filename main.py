@@ -158,7 +158,7 @@ def print_results(results: List[Dict]):
         description = article.get("description", "")
         st.sidebar.markdown(
             f"""
-            **{index}. {article.get('title')}**
+            **{index}. {article.get('title')}**<br>
             **Source:** {article.get('source', {}).get('name', 'Unknown')}  
             **Published:** {format_published_date(article.get('publishedAt'))}<br> 
             **URL:** {article.get('url')}  
