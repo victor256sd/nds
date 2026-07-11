@@ -33,7 +33,7 @@ def search_everything(query: str, page_size: int = 100) -> List:
         "language": "en",
         "sortBy": "publishedAt",
         "pageSize": page_size,
-        "excludeDomains": "gov.uk",
+        "excludeDomains": "www.gov.uk",
         "apiKey": NEWS_API_KEY,
     }
 
