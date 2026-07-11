@@ -33,6 +33,7 @@ def search_everything(query: str, page_size: int = 100) -> List:
         "language": "en",
         "sortBy": "publishedAt",
         "pageSize": page_size,
+        "excludeDomains": "gov.uk",
         "apiKey": NEWS_API_KEY,
     }
 
@@ -151,7 +152,7 @@ def build_news_feed(final_count: int, threshold: int) -> List:
     return articles[:final_count]
 
 def print_results(results: List[Dict]):
-    st.sidebar.markdown("## School Litigation News")
+    st.sidebar.markdown(":newspaper: ## School Litigation News")
 
     for index, article in enumerate(results, start=1):
         description = article.get("description", "")
